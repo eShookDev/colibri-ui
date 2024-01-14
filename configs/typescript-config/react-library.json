@@ -6,6 +6,5 @@
     "jsx": "react-jsx",
     "moduleResolution": "Bundler",
     "module": "ESNext"
-
   }
 }

@@ -4,7 +4,7 @@ import { ReactNode, useEffect } from "react";
 
 import gsap, { Back } from "gsap";
 
-import { useArrayRef } from "@/utils/useArrayRef";
+import { useArrayRef } from "@repo/utils";
 
 import { AnimationConfigProps } from "../Animation";
 

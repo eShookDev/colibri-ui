@@ -10,8 +10,7 @@
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
-    "prettier": "^3.1.1",
-    "turbo": "latest"
+    "prettier": "^3.1.1"
   },
   "engines": {
     "node": ">=18"
@@ -20,5 +19,8 @@
     "configs/*",
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "turbo": "^1.11.3"
+  }
 }

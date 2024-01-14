@@ -1,3 +1,5 @@
+"use client"
+
 import dynamic from "next/dynamic";
 
 const FadeIn = dynamic(() => import('./animations/FadeIn'), { ssr: false });
@@ -20,9 +22,9 @@ export interface AnimationConfigProps {
 
 interface AnimationProps extends AnimationConfigProps {
     /**
-     * Type of animation. Can be a string or predefined values "Move", "fadeIn", "fadeOut".
+     * Type of animation. Can be a string or predefined values "Move", "fadeIn".
      */
-    animation: | string | "Move" | "fadeIn" | "fadeOut";
+    animation: | string | "Move" | "fadeIn";
       /**
      * Function that takes a RefObject and returns ReactNode or ReactNode[]
      * @param animationRef RefObject to be passed to children

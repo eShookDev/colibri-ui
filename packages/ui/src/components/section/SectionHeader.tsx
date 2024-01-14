@@ -8,7 +8,7 @@ import { Animation, AnimationConfigProps } from "@repo/animation"
 
 import Typography from "../Typography";
 
-export interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SectionHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
     /**
       * The 'tag' prop allows specifying the HTML element type for rendering the component.
       * It is limited to the values "div" using the extract element type.
@@ -27,7 +27,7 @@ export interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
     withAnimation?: { animation: string; config?: AnimationConfigProps }
 }
 
-const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>((props, ref) => {
+const SectionHeader = forwardRef<HTMLDivElement, SectionHeaderProps>((props, ref) => {
 
     const {
         tag: Component = "div",
@@ -56,7 +56,7 @@ const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>((props, ref) => {
             ) : (
                 <Component
                     ref={animationRef}
-                    className={twMerge("flex flex-col items-center space-y-6", className)}
+                    className={twMerge("flex flex-col items-center", className)}
                     {...rest}
                 >
                     {children}
@@ -75,6 +75,6 @@ const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>((props, ref) => {
     );
 });
 
-CardHeader.displayName = "Card.Header"
+SectionHeader.displayName = "Section.Header"
 
-export default CardHeader;
+export default SectionHeader;

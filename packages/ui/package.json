@@ -24,6 +24,9 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "gsap": "^3.12.4"
+    "class-variance-authority": "^0.7.0",
+    "gsap": "^3.12.4",
+    "smooth-scrollbar": "^8.8.4",
+    "swiper": "^11.0.5"
   }
 }
