@@ -13,7 +13,7 @@ const Layout = (props: Props) => {
     } = props;
 
     return (
-        <Elements.div className="bg-black">
+        <Elements.div className="bg-black md:bg-slate-400">
             <div className="relative overflow-hidden w-full">
                 <Scrollable>
                     {children}
