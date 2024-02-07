@@ -10,8 +10,8 @@
         "lint": "eslint . --max-warnings 0"
     },
     "devDependencies": {
-        "@repo/eslint-config": "^0.0.0",
-        "@repo/typescript-config": "^0.0.0",
+        "@repo/eslint-config": "*",
+        "@repo/typescript-config": "*",
         "react": "^18.2.0",
         "typescript": "^5.3.3"
     }

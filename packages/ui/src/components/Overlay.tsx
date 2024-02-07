@@ -1,8 +1,6 @@
 "use client"
 
-import React from "react";
-
-import Element from "./Element";
+import Elements from "./Elements";
 
 import { cn } from "../utils";
 
@@ -22,7 +20,7 @@ const Overlay = (props: OverlayProps) => {
     } = props;
 
     return (
-        <Element.div
+        <Elements.div
             className={
                 cn(
                     "fixed w-full h-full top-0 left-0 -z-10 pointer-events-none",

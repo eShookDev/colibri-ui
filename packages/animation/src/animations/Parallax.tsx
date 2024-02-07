@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import { twMerge } from "tailwind-merge";
 
-import { Element } from "@repo/ui";
+import { Elements } from "@repo/ui";
 
 interface AnimationConfig {
     /**
@@ -80,7 +80,7 @@ function Parallax(props: Props) {
     }, [config.ease, withAnimation])
 
     return (
-        <Element.div
+        <Elements.div
             ref={refScroll}
             className={
                 twMerge(
@@ -95,7 +95,7 @@ function Parallax(props: Props) {
                 sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw,33vw"
                 className="cover-image object-cover absolute"
                 {...rest} />
-        </Element.div>
+        </Elements.div>
     )
 
 }

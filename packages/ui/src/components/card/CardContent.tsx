@@ -1,6 +1,6 @@
 "use client";
 
-import React, { HTMLAttributes, RefObject, forwardRef, } from "react"
+import { HTMLAttributes, RefObject, forwardRef, } from "react"
 
 import { twMerge } from "tailwind-merge";
 

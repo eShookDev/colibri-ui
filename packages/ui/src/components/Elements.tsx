@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react";
 
-const Elements = [
+const ElementsList = [
     'div',
     'span',
     'p',
@@ -48,12 +48,12 @@ BaseElement.displayName = "BaseElement";
 /**
  * Typing dynamic element map
  */
-type ElementMap = { [ElementName in typeof Elements[number]]: React.FC<Omit<ElementProps, 'tag'>> };
+type ElementMap = { [ElementName in typeof ElementsList[number]]: React.FC<Omit<ElementProps, 'tag'>> };
 
 /**
  * Dynamically create a component for each element
  */
-const Element = Elements.reduce((element, node) => {
+const Elements: ElementMap = ElementsList.reduce((element, node) => {
 
     // Create component
     const Component = forwardRef<HTMLElement, Omit<ElementProps, 'tag'>>((props, ref) => (
@@ -70,4 +70,4 @@ const Element = Elements.reduce((element, node) => {
 
 }, {} as ElementMap);
 
-export default Element;
+export default Elements;

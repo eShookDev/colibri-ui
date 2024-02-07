@@ -1,7 +1,6 @@
 "use client"
 
 import { ImageProps } from "next/dist/shared/lib/get-img-props";
-import Image from "next/image";
 import { ElementType, HTMLAttributes, forwardRef } from "react"
 import { twMerge } from "tailwind-merge";
 
@@ -32,9 +31,6 @@ const SectionBase = forwardRef<HTMLDivElement, SectionBaseProps>((props, ref) =>
 
     return (
         <Component className={twMerge("flex flex-col justify-center my-20", className)}>
-            {withBackgroundImage && (
-                <Image src={withBackgroundImage.src} className={withBackgroundImage.className} alt=""></Image>
-            )}
             {children}
         </Component>
     )

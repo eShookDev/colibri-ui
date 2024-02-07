@@ -16,7 +16,7 @@ interface IGrid extends BaseProps {
     templateRows?: number
     templateGap?: {
         Column?: number
-        Row?: number | 2
+        Row?: number
     }
 }
 

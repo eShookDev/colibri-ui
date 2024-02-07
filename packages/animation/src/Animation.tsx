@@ -1,9 +1,8 @@
 "use client"
 
-import dynamic from "next/dynamic";
+import Move from "./animations/Move";
+import FadeIn from "./animations/FadeIn";
 
-const FadeIn = dynamic(() => import('./animations/FadeIn'), { ssr: false });
-const Move = dynamic(() => import('./animations/Move'), { ssr: false });
 
 export interface AnimationConfigProps {
     /**

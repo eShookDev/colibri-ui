@@ -1,4 +1,4 @@
-export { default as Element } from "./components/Element";
+export { default as Elements } from "./components/Elements";
 export { default as FlatList } from "./components/FlatList";
 export { default as Overlay } from "./components/Overlay";
 export { default as Scrollable } from "./components/Scrollable";

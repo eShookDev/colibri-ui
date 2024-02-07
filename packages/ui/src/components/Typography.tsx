@@ -1,9 +1,10 @@
 "use client"
 
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import clsx from "clsx";
 import { cn } from "../utils";
-import Element from "./Element";
+
+import { Elements } from "..";
 
 interface TypographyProps {
     /**
@@ -52,6 +53,7 @@ const Title = forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
         <Component
             ref={ref}
             className={cn(headingClasses, className)}
+            {...rest}
         >
             {children}
         </Component>
@@ -66,7 +68,7 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>((props, ref) 
     const { children } = props;
 
     return (
-        <Element.p ref={ref} className="">{children}</Element.p>
+        <Elements.p ref={ref} className="">{children}</Elements.p>
     )
 })
 
@@ -79,7 +81,7 @@ const Text = forwardRef<HTMLSpanElement, TextProps>((props, ref) => {
     const { children } = props;
 
     return (
-        <Element.span ref={ref} className="">{children}</Element.span>
+        <Elements.span ref={ref} className="">{children}</Elements.span>
     )
 
 })

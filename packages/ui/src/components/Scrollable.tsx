@@ -1,18 +1,20 @@
 'use client'
 
-import { ElementType, HTMLAttributes, ReactNode, useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import Scrollbar from "smooth-scrollbar"
 
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+import Elements from "./Elements";
+
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
     /**
      * The 'tag' prop allows specifying the HTML element type for rendering the Card component.
      * It is limited to the values "div" or "section" using the 'LimitedElementType' type.
      * It is optional and defaults to the "div" element if not provided.
      */
-    tag?: ElementType
+    tag?: React.ElementType
 }
 
 /** Register GSAP Plugin */
@@ -21,7 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Scrollable = (props: Props) => {
 
     const {
-        tag: Tag = "div",
+        tag: Component = "div",
         children
     } = props;
 
@@ -58,14 +60,14 @@ const Scrollable = (props: Props) => {
     }, [])
 
     return (
-        <Tag
+        <Component
             ref={refScrollbar}
             style={{ height: "100vh" }}
         >
-            <div className="relative px-24">
+            <Elements.div className="relative px-24">
                 {children}
-            </div>
-        </Tag>
+            </Elements.div>
+        </Component>
     )
 }
 

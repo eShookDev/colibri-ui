@@ -3,6 +3,7 @@
 import { MutableRefObject, useRef } from 'react';
 
 // Custom React hook to manage an array of HTMLElement references
+// eslint-disable-next-line no-unused-vars
 export function useArrayRef(): [MutableRefObject<HTMLElement[]>, ((element: HTMLElement | null) => void)] {
 
     // Create a mutable ref to store an array of HTMLElement references

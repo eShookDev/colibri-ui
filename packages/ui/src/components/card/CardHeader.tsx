@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment, forwardRef } from "react"
+import { forwardRef } from "react"
 
 import { twMerge } from "tailwind-merge";
 
@@ -43,7 +43,7 @@ const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>((props, ref) => {
 
     // Conditionally render based on withAnimation prop
     const renderContent = (animationRef: React.RefObject<any>) => (
-        <Fragment>
+        <>
             {asHeading ? (
                 <Typography.Title
                     ref={animationRef}
@@ -62,7 +62,7 @@ const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>((props, ref) => {
                     {children}
                 </Component>
             )}
-        </Fragment>
+        </>
     );
 
     // Conditionally wrap content

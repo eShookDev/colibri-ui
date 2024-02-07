@@ -1,6 +1,8 @@
 "use client"
 
-import React, { Fragment, Ref, forwardRef, useMemo } from "react";
+import React from "react";
+
+import { Fragment, forwardRef, useMemo } from "react";
 
 /**
  * Type for the function that renders an item in the list.

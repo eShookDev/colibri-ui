@@ -2,7 +2,7 @@
 
 import { twMerge } from "tailwind-merge"
 
-import { Element, Scrollable } from "@repo/ui"
+import { Elements, Scrollable } from "@repo/ui"
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> { }
 
@@ -13,7 +13,7 @@ const Layout = (props: Props) => {
     } = props;
 
     return (
-        <Element.div className="bg-black">
+        <Elements.div className="bg-black">
             <div className="relative overflow-hidden w-full">
                 <Scrollable>
                     {children}
@@ -26,7 +26,7 @@ const Layout = (props: Props) => {
                     )}
                 />
             </div>
-        </Element.div>
+        </Elements.div>
     )
 }
 

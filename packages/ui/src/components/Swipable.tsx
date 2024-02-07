@@ -11,6 +11,8 @@ import { twMerge } from "tailwind-merge";
 
 import "swiper/css";
 
+import { Elements, Section } from "..";
+
 export interface SwipableItem {
     id: number
     source: ImageProps["src"]
@@ -74,14 +76,13 @@ function Swipable<T extends SwipableItem>(props: SwipableProps<T>) {
 
     const handleSlideChange = (swiper: SwiperClass): void => {
 
-        const { previousIndex, activeIndex } = swiper;
-        const direction = activeIndex > previousIndex ? 1 : -1;
+        const { activeIndex } = swiper;
 
         setActiveSlide(activeIndex);
     }
 
     return (
-        <section className="relative">
+        <Section className="relative">
             <div className={
                 twMerge(
                     "relative h-screen overflow-hidden left-2/4",
@@ -99,7 +100,7 @@ function Swipable<T extends SwipableItem>(props: SwipableProps<T>) {
                 >
                     {data.map((item, index) => (
                         <SwiperSlide key={index} data-slider-id={index}>
-                            <div className="relative h-full w-full">
+                            <Elements.div className="relative h-full w-full">
                                 {withImage && (
                                     <Image
                                         src={item.source}
@@ -112,7 +113,7 @@ function Swipable<T extends SwipableItem>(props: SwipableProps<T>) {
                                 {withVideo && (
                                     <></>
                                 )}
-                            </div>
+                            </Elements.div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
@@ -133,13 +134,13 @@ function Swipable<T extends SwipableItem>(props: SwipableProps<T>) {
                         )}
                         key={index}
                     >
-                        <span className="slide-text text-6xl">{item.title}</span>
+                        <span className="text-6xl">{item.title}</span>
                         {contentHasSeparator && (<hr className="mt-5 w-full" />)}
                         <span className="mt-5 max-w-lg uppercase">{item.description}</span>
                     </div>
                 )}
             </div>
-        </section>
+        </Section>
     )
 
 }
