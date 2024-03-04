@@ -11,7 +11,7 @@ import { twMerge } from "tailwind-merge";
 
 import "swiper/css";
 
-import { Elements, Section } from "..";
+import { Elements, Overlay, Section } from "..";
 
 export interface SwipableItem {
     id: number
@@ -82,8 +82,8 @@ function Swipable<T extends SwipableItem>(props: SwipableProps<T>) {
     }
 
     return (
-        <Section className="relative">
-            <div className={
+        <Elements.div className="relative">
+            <Elements.div className={
                 twMerge(
                     "relative h-screen overflow-hidden left-2/4",
                     fullWidth && "w-screen -ml-[50vw]"
@@ -101,6 +101,7 @@ function Swipable<T extends SwipableItem>(props: SwipableProps<T>) {
                     {data.map((item, index) => (
                         <SwiperSlide key={index} data-slider-id={index}>
                             <Elements.div className="relative h-full w-full">
+                                <Overlay />
                                 {withImage && (
                                     <Image
                                         src={item.source}
@@ -117,8 +118,8 @@ function Swipable<T extends SwipableItem>(props: SwipableProps<T>) {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-            </div>
-            <div className={
+            </Elements.div>
+            <Elements.div className={
                 twMerge(
                     "flex absolute top-0 h-full w-full pointer-events-none px-12 z-10",
                     contentFit === "top" && "w-full left-0 items-end",
@@ -127,20 +128,21 @@ function Swipable<T extends SwipableItem>(props: SwipableProps<T>) {
             }
             >
                 {data.map((item, index) =>
-                    <div className={
-                        twMerge(
-                            activeSlide === index ? "opacity-100" : "opacity-0",
-                            "flex flex-col items-center absolute py-10 w-full"
-                        )}
+                    <Elements.div
                         key={index}
+                        className={
+                            twMerge(
+                                activeSlide === index ? "opacity-100" : "opacity-0",
+                                "flex flex-col items-center absolute py-10 w-full"
+                            )}
                     >
-                        <span className="text-6xl">{item.title}</span>
+                        <Elements.span className="text-6xl">{item.title}</Elements.span>
                         {contentHasSeparator && (<hr className="mt-5 w-full" />)}
-                        <span className="mt-5 max-w-lg uppercase">{item.description}</span>
-                    </div>
+                        <Elements.span className="mt-5 max-w-lg uppercase">{item.description}</Elements.span>
+                    </Elements.div>
                 )}
-            </div>
-        </Section>
+            </Elements.div>
+        </Elements.div>
     )
 
 }

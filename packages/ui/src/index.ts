@@ -8,6 +8,8 @@ export { default as Swipable } from "./components/Swipable";
 export { Card } from "./components/card";
 export { Section } from "./components/section";
 
+export { Button, buttonVariants } from "./components/Button";
+
 export type { SwipableItem } from "./components/Swipable";
 
 export { cn } from "./utils";

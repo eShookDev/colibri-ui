@@ -7,7 +7,7 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --border-color: hsla(0, 0%, 100%, 0.07);
-  --border-color-hover: #ed008b;
+  --border-color-hover: #405E61;
 }
 
 @media (prefers-color-scheme: dark) {
