@@ -55,8 +55,8 @@ export default function Home() {
             />
             <Card className="absolute left-0 bottom-0 ml-12 mb-12" variant="outline">
               <div className="flex flex-col">
-                <span className="text-8xl uppercase font-bold">25</span>
-                <span className="text-base uppercase">anni di esperienza</span>
+                <span className="text-8xl uppercase font-bold">5</span>
+                <span className="text-base uppercase">Years of experience</span>
               </div>
             </Card>
           </Card>
